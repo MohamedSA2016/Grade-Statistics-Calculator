@@ -2,21 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Grade_Statistics_Calculator.MainPage">
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+        <Entry x:Name="scoreEntry" Placeholder="Enter score" />
+        <Button Text="Add Score" Clicked="OnAddScoreClicked" BackgroundColor="#2196F3" TextColor="White"
+                CornerRadius="5" Margin="0, 20, 0, 0" HorizontalOptions="Center" WidthRequest="120" />
 
-    <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Label Text="Grade Statistics Calculator" FontSize="30" HorizontalOptions="Center" />
-            <Entry x:Name="scoreEntry" Placeholder="Enter test score" Keyboard="Numeric" FontSize="18"
-               HorizontalOptions="FillAndExpand" Margin="0,20" />
-            <Button Text="Add Score" Clicked="OnAddScoreClicked" Style="{StaticResource AddScoreButtonStyle}" />
-            <Label x:Name="averageLabel" HorizontalOptions="Center" FontSize="24"
-               TextColor="#4CAF50" Margin="0,30,0,0" />
-            <Label x:Name="minimumLabel" HorizontalOptions="Center" FontSize="24"
-               TextColor="#4CAF50" Margin="0,10,0,0" />
-            <Label x:Name="maximumLabel" HorizontalOptions="Center" FontSize="24"
-               TextColor="#4CAF50" Margin="0,10,0,0" />
-            <Label x:Name="medianLabel" HorizontalOptions="Center" FontSize="24"
-               TextColor="#4CAF50" Margin="0,10,0,0" />
-        </StackLayout>
-    </ContentPage.Content>
+        <Label Text="Average Score:" FontSize="18" TextColor="#4CAF50" HorizontalOptions="Center" Margin="0, 40, 0, 0" />
+        <Label Text="{Binding AverageScore, StringFormat='{0:F2}'}" FontSize="24" TextColor="#4CAF50" 
+                HorizontalOptions="Center" Margin="0, 10, 0, 0" FontAttributes="Bold" />
+
+        <Label Text="Minimum Score:" FontSize="18" TextColor="#F44336" HorizontalOptions="Center" Margin="0, 40, 0, 0" />
+        <Label Text="{Binding MinimumScore, StringFormat='{0:F2}'}" FontSize="24" TextColor="#F44336" 
+                HorizontalOptions="Center" Margin="0, 10, 0, 0" FontAttributes="Bold" />
+
+        <Label Text="Maximum Score:" FontSize="18" TextColor="#2196F3" HorizontalOptions="Center" Margin="0, 40, 0, 0" />
+        <Label Text="{Binding MaximumScore, StringFormat='{0:F2}'}" FontSize="24" TextColor="#2196F3" 
+                HorizontalOptions="Center" Margin="0, 10, 0, 0" FontAttributes="Bold" />
+
+        <Label Text="Median Score:" FontSize="18" TextColor="#D2691E" HorizontalOptions="Center" Margin="0, 40, 0, 0" />
+        <Label Text="{Binding MedianScore, StringFormat='{0:F2}'}" FontSize="24" TextColor="#D2691E" 
+                HorizontalOptions="Center" Margin="0, 10, 0, 0" FontAttributes="Bold" />
+    </StackLayout>
 </ContentPage>
