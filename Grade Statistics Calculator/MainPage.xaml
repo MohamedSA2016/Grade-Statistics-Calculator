@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Grade_Statistics_Calculator.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Margin="20" VerticalOptions="Center">
+            <Label Text="Grade Statistics Calculator" FontSize="30" HorizontalOptions="Center" />
+            <Entry x:Name="scoreEntry" Placeholder="Enter test score" Keyboard="Numeric" FontSize="18"
+               HorizontalOptions="FillAndExpand" Margin="0,20" />
+            <Button Text="Add Score" Clicked="OnAddScoreClicked" Style="{StaticResource AddScoreButtonStyle}" />
+            <Label x:Name="averageLabel" HorizontalOptions="Center" FontSize="24"
+               TextColor="#4CAF50" Margin="0,30,0,0" />
+            <Label x:Name="minimumLabel" HorizontalOptions="Center" FontSize="24"
+               TextColor="#4CAF50" Margin="0,10,0,0" />
+            <Label x:Name="maximumLabel" HorizontalOptions="Center" FontSize="24"
+               TextColor="#4CAF50" Margin="0,10,0,0" />
+            <Label x:Name="medianLabel" HorizontalOptions="Center" FontSize="24"
+               TextColor="#4CAF50" Margin="0,10,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
